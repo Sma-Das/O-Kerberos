@@ -28,7 +28,7 @@ openssl_private_decrypt($encrypted_response, $decrypted_response, $password_hash
 $auth_response = json_decode($decrypted_response, true);
 if ($auth_response['auth'] === 'success') {
     // Redirect to application.local with the token
-    header("Location: http://application.local?token={$auth_response['token']}");
+    header("Location: http://application.local:8080?token={$auth_response['token']}");
 } else {
     // Redirect to the login page
     header("Location: login.php");

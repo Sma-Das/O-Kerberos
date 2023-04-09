@@ -12,7 +12,7 @@ $username = $credentials['username'];
 $password = $credentials['password'];
 
 // Send credentials to provider.local
-$provider_url = "http://provider.local/auth.php";
+$provider_url = "https://provider.local/auth.php";
 $provider_response = file_get_contents($provider_url . "?username=$username&password=$password");
 
 // Extract access token from provider response
