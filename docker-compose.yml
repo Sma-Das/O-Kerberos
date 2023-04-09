@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  app-server:
+    build: ./app-server
+    container_name: app-server
+    ports:
+      - "8080:80"
+
+  client:
+    build: ./client-app
+    container_name: client
+    ports:
+      - "80:80"
+
+  auth:
+    build: ./auth-server
+    container_name: auth
+
+  provider:
+    build: ./oauth-provider
+    container_name: provider
